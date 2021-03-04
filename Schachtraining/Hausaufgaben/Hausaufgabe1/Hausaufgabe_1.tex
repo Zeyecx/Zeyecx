@@ -1,0 +1,386 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{fancyheadings}
+\usepackage[ngerman,german]{babel}
+\usepackage{german}
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+\usepackage[active]{srcltx}
+\usepackage{algorithm}
+\usepackage[noend]{algorithmic}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bbm}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{ifthen}
+\usepackage{listings}
+\usepackage{struktex}
+\usepackage{hyperref}
+
+% Smile 
+\usepackage{wasysym}
+
+% FEN - Libary
+\usepackage{skak}
+
+% Führende Null mitziehen
+\newcommand{\leadingzero}[1]{\ifnum #1<10 0\the#1\else\the#1\fi}
+\renewcommand{\today}{\leadingzero{\day}.\leadingzero{\month}.\the\year}     % DD.MM.YYYY
+ 
+ % Anfuehrungszeichen
+\newcommand{\An}[1]{\glqq #1\grqq{}} 
+
+% Schach und so 
+% FEN
+\newcommand{\white}[1]{
+	\centering
+	\newgame
+	\fenboard{#1} 
+	\showboard \hspace{1cm} $\square$ \\
+	%	FEN: #1 
+}
+
+\newcommand{\black}[1]{
+	\centering
+	\newgame
+	\fenboard{#1} 
+	\showboard \hspace{1cm}  $\blacksquare$\\
+	%	FEN: #1 
+}
+
+% Faulheit
+\newcommand{\Remis}{$\frac{1}{2}-\frac{1}{2}$}
+\newcommand{\unterstreichen}[1]{\underline{\underline{#1}}}
+\newcommand{\links}{\raggedright}
+
+ 	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% EDIT THIS PART %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Fach}{Schachtraining}
+\newcommand{\Modulnummer}{Allgemein}
+\newcommand{\Name}{Jonathan Skopp}
+\newcommand{\Datum}{\today}
+\newcommand{\Matrikelnummer}{Zeyecx}
+\newcommand{\Semester}{WS 20/21}
+\newcommand{\Uebungsblatt}{1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\setlength{\parindent}{0em}
+\topmargin -1.0cm
+\oddsidemargin 0cm
+\evensidemargin 0cm
+\setlength{\textheight}{9.2in}
+\setlength{\textwidth}{6.0in}
+
+
+\newcommand{\Aufgabe}[1]{
+  {
+  \vspace*{0.5cm}
+  \textsf{\textbf{Aufgabe #1}}
+  \vspace*{0.2cm}
+  
+  }
+}
+%%%%%%%%%%%%%%
+\hypersetup{
+    pdftitle={\Fach{}: Hausaufgabe \Uebungsblatt{}},
+    pdfauthor={\Name},
+    pdfborder={0 0 0}
+}
+
+
+\title{Kurseinheit  \Uebungsblatt{}}
+\author{\Name{}}
+
+\begin{document}
+\thispagestyle{fancy}
+\lhead{\sf \large \Fach{} - \Modulnummer \\ \small \Name{} - \Matrikelnummer{}}
+\rhead{\sf \Semester{} \\  Datum \today }
+\vspace*{0.2cm}
+\begin{center}
+\LARGE \sf \textbf{Hausaufgabe \Uebungsblatt{}}
+\end{center}
+\vspace*{0.2cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Insert your solutions here %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Diese Hausaufgaben beziehen sich auf die Lichess Studie: \\ \url{https://lichess.org/study/12P28HgL}
+
+\Aufgabe{1}
+\white{6k1/1p3p2/p2prPq1/8/7p/2Q5/PP3RP1/6K1 w - - 0 1}
+\links
+\underline{Lösung:}\\
+Da auf dem Brett aktiv nicht sonderlich viel los ist, springt mir Dc8+ in das Gesicht. Nun bleibt dem König nicht viel anderes übrig, als nach h7 zu gehen. Jetzt gibt es keine sinnvollen Schachzüge mehr (Dg8+ Kxg8 0-1 und so weiter).\\
+Wenn man jetzt die Schlagzüge sucht, findet man Dxb7 und Dxe6. Erster ist nicht zielführend, weil Schwarz mit Te1+ mich viel zu sehr unter druck setzt. Bleibt nur der Zug Dxe6. Der Bauer muss wiedernehmen und dann versuche ich mit dem Bauern durchzulaufen.  Das Schach Db1+ interessiert nur bedingt, da Kh2 alles abwehrt. Nun hat die Dame keine Möglichkeit mehr, sich vor den Bauern zu stellen. 1-0
+
+\vspace{1em}
+\underline{Zugfolge:}
+\begin{center}
+	\begin{tabular}[h]{c|c}
+		\textbf{Weiß}  & \textbf{Schwarz} \\
+		\hline
+		Kb5 & Kb8\\
+		c7 & \unterstreichen{1-0}
+	\end{tabular}
+\end{center}
+\clearpage
+
+\Aufgabe{2}
+\black{4r2k/8/p6p/2P5/PR6/3N1p2/1p5P/1n5K b - - 0 1}
+\links
+\underline{Lösung:}
+
+Diese Aufgabe hat mich interessanterweise am meisten Zeit gekostet. Davon mal abgesehen, dass ich 2min gebraucht habe, zu erkennen, dass der Bauer auf f3 nach f1 will \smiley{}. Ich hatte das Problem zu erkennen, das der weiße Turm auf f4 zwar das Feld f1 deckt aber nicht das Feld e1. Ich weiß, dass das etwas komisch klingt.\\
+Nach Te1, Sxe1, f2 dachte ich, dass weiß einfach nur Tf4 spielen muss um sich den Bauern abzuholen. \\ 
+Ich habe halt verpennt, dass, wenn ich den Springer ablenke, er auf e1 steht und ich diesen schlagen kann. Dies löst auch das Kg2 Problem. Denn e1 ist von g2 nicht erreichbar. 0-1\\
+
+\vspace{1em}
+\underline{Zugfolge:}
+\begin{center}
+	\begin{tabular}[h]{c|c}
+		\textbf{Weiß}  & \textbf{Schwarz} \\
+		\hline
+		$\dots$ & Te1+ \\
+		Sxe1 & f2 \\
+		Tf4 & fxe1\\
+		$\dots$ & \unterstreichen{0-1}
+	\end{tabular}
+\end{center}
+\clearpage
+
+\Aufgabe{3}
+\white{1r3k2/3p1ppp/RP2p3/8/1PR5/6P1/3rPP1P/6K1 w - - 0 1}
+\links
+\underline{Lösung:}
+
+Diese Aufgabe habe ich schon mal gesehen. Da stand der Bauer aber schon auf der 7ten Reihe und ich hatte nur einen Turm. Der Trick da war den Turm so auf Grundreihe zustellen, dass schwarz nehmen muss und ich mit dem Bauern wieder schlagen kann. Diesen Algorithmus wende ich einfach doppelt an.\\
+Die große Preisfrage ist aber ob Ta8+ oder Tc8+ gewinnt. Nach Tc8+ geht Ke7 nicht, da der Turm immer noch hängt und nun der Bauer ohne Probleme durchläuft.\\
+In Anbetracht dessen sollte auch egal sein, welcher Turm zieht, ich wandle halt den Bauern dann einfach im entgegengesetzten Feld um. Also wenn ich mit dem A-Turm ziehe, wandel ich auf c1 um und umgedreht. Das Zwischenschach auf a1 bzw. c1 ist nicht möglich, da nach Kg2 der Turm die 8te Reihe nicht mehr unter Kontrolle hat.
+
+\vspace{1em}
+\underline{Zugfolge:}
+\begin{center}
+	\begin{tabular}[h]{c|c}
+		\textbf{Weiß}  & \textbf{Schwarz} \\
+		\hline
+		Tc8+ & Txc8\\
+		b7 & Tb8 \\
+		Ta8+ & Txa8 \\
+		bxa8D+ & $\dots$ \\
+		\unterstreichen{1-0}
+	\end{tabular}
+\end{center}
+\clearpage
+
+
+\Aufgabe{4}
+\white{2r2rk1/p1N2p1p/2P1p1p1/1Pp3q1/3b4/5Q2/P1P3PP/4RR1K w - - 0 1}
+\links
+\underline{Lösung:}\\
+Für diese Aufgabe habe ich gefühlt eine halbe Stunde gebraucht, bis ich überhaupt wusste, was ich möchte. \\ Ich kenne jetzt viele Varianten mit b6.  Ich habe aber nie den Turm von c8 wegbekommen. Deswegen musste ich mir was neues Überlegen. Hätte ich aus Frust nie die Dame sinnlos auf f7+ geschlagen, wäre ich wahrscheinlich nie auf die Lösung gekommen. Aber im Nachgang ist Sxe6 recht logisch.
+
+\vspace{1em}
+\underline{Zugfolge:}
+\begin{center}
+	\begin{tabular}[h]{c|c}
+		\textbf{Weiß}  & \textbf{Schwarz} \\
+		\hline
+		Sxe6 & fxe6\\
+		Dxf8+ & Txf8\\
+		Txf8 & Txf8 \\
+		c7 & $\dots$ \\		
+		\unterstreichen{1-0}
+	\end{tabular}
+\end{center}
+\textit{Nachtrag: Aus bekannten Gründen, kann die Dame nicht nach d8}
+\clearpage
+
+
+\Aufgabe{5}
+\black{7r/1pR5/6k1/3p4/p5n1/4P1p1/PPP3P1/5RK1 b - - 0 1}
+\links
+\underline{Lösung:}\\
+Ich denke mal, dass ich diese Aufgabe auf eine etwas seltsame Art gelöst habe. Ich bin davon ausgegangen, dass Th1 Matt ist, weil ich dachte, das der Springer auf g3 steht. naja. Irgendwann ist mir das auch mal aufgefallen. \frownie{}.\\
+Dann habe ich ein bisschen herumprobiert, ob es vll. möglich ist, dort dennoch Matt zu setzen. Ich spielte also Sf2. Nun muss weiß nehmen, da sonst nach Th1 wirklich Matt ist. Also Txh2 gxh2. Hier realisierte ich, dass ich gar nicht Matt setzen soll, sondern einfach nur den Bauern durchbringen muss. Wenn ich aber gleich gxh2 spiele, schlägt immer der König. Ich muss diesen also ablenken. Das kann ich ja jetzt mit Th1\# machen. Nach Kxh1 kann ich gxf2 spielen, da der König nun nicht nach g1 ziehen kann.
+\vspace{1em}
+\underline{Zugfolge:}
+\begin{center}
+	\begin{tabular}[h]{c|c}
+		\textbf{Weiß}  & \textbf{Schwarz} \\
+		\hline
+		$\dots$ & Sf2\\
+		Txf2 & Th1+\\
+		Kxh1 & gxf2 \\
+		\unterstreichen{1-0}
+	\end{tabular}
+\end{center}
+\clearpage
+
+\Aufgabe{6}
+\black{8/2n5/3p4/2kPp3/4Pp2/N1K2Pp1/6P1/8 b - - 0 1}
+\links
+\underline{Lösung:}\\
+Das ist die Aufgabe, bei der ich nachgefragt habe.\\
+\vspace{1em}
+\underline{Zugfolge:}
+\begin{center}
+	\begin{tabular}[h]{c|c}
+		\textbf{Weiß}  & \textbf{Schwarz} \\
+		\hline
+		$\dots$ & Sxd5+ \\
+		exd5 & e4 \\
+		Kd2 & exf3 \\
+		Ke1 & fxg2 \\
+		Ke2 & g1D+\\		
+		$\dots$ & \unterstreichen{0-1}
+	\end{tabular}
+\end{center}
+\clearpage
+
+
+\Aufgabe{7}
+\white{1n6/R7/P1r2pk1/7p/8/5P2/7P/6K1 w - - 0 1}
+\links
+\underline{Lösung:}\\
+Die Aufgabe ist lustigerweise genau dieselbe wie Nummer 2 und 3.  Ich parke den Turm wo anders, um dann durchzulaufen. Der Turm kann nur a8 oder b8 decken. Ich kann aber, da ich den Springer schlagen kann, auf beide Felder gehen. Dadurch bekomme ich den Bauern eh durch. \\
+Um den Turm von a7 zu entfernen, hilft es, den Turm auf g7 zu parken, da ein Schach ist und Schwarz ziehen muss.
+
+\vspace{1em}
+\underline{Zugfolge:}
+\begin{center}
+	\begin{tabular}[h]{c|c}
+		\textbf{Weiß}  & \textbf{Schwarz} \\
+		\hline
+		Tg7+ & Kxg7\\
+		a7 & Sa6 \\
+		a8D & $\dots$\\
+		\unterstreichen{1-0}
+	\end{tabular}
+\end{center}
+\clearpage
+
+
+\Aufgabe{8}
+\black{6k1/5pp1/8/B2n4/5P2/P4QPp/4K3/7q b - - 0 1}
+\links
+\underline{Lösung:}\\
+Eigentlich ist die Aufgabe genau wie die anderen. \\
+Der Bauer auf a3 will sich auf h1 umwandeln. Ich muss nur den König von dem Feld g2 ablenken. Da er sonst (wegen Dreieck) gleichzeitig auf h1 ist. \\	
+Also Dxf3 Kxf3 Se3. Nun kann Weiß nicht auf das Feld g2 (und auch nach Kf2 auf das Feld f1) und kann den Bauern nicht mehr aufhalten.
+
+\vspace{1em}
+\underline{Zugfolge:}
+\begin{center}
+	\begin{tabular}[h]{c|c}
+		\textbf{Weiß}  & \textbf{Schwarz} \\
+		\hline
+		$\cdots$ & Dxf3 \\
+		Kxf3 & Se3 \\
+		Kf2 & h2 \\
+		$\cdots$ & h1D\\
+		$\cdots$ & \unterstreichen{0-1}
+	\end{tabular}
+\end{center}
+\clearpage
+
+\Aufgabe{9}
+\white{rkb4r/4Rp1p/p1PR1p1b/8/8/5N2/P4PPP/6K1 w - - 0 1}
+\links
+\underline{Lösung:}\\
+Eigentlich ist das Ganze nicht so kompliziert, wenn man es ein paarmal macht.\\
+Schwarz wird nie den Läufer wegbewegen. Also muss ich versuchen, anders durchzukommen. Wenn der schwarze Turm von h8 auf d8 stehen würde, könnte ich diesen einfach mit b7+ und bxd8 gewinnen. Deswegen lenke ich den Turm auf das Feld d8. Dazu spiele ich selber Td8. \\
+Grundlegend ist das eigentlich nur eine andere Interpretation der Aufgabe 2. Bloß steht hier kein Pferd auf d8.\\
+sollte schwarz nicht schlagen, schlage ich alles raus und habe etwas mehr.
+
+\vspace{1em}
+\underline{Zugfolge:}
+\begin{center}
+	\begin{tabular}[h]{c|c}
+		\textbf{Weiß}  & \textbf{Schwarz} \\
+		\hline
+		Td8 & Txd8 \\
+		c7+ & $\dots$\\
+		bxd8 &$\dots$\\
+		\unterstreichen{1-0}
+	\end{tabular}
+\end{center}
+\clearpage
+
+\Aufgabe{10}
+\black{8/8/3K1k2/5p1p/4p1p1/4P1P1/5PP1/8 b - - 0 1}
+\links
+\underline{Lösung:}\\
+Diese Aufgabe ist genauso wie die im Training behandelte Aufgabe mit den 3 Bauern. Es gilt also darum, eine ähnliche Stellung herbeizuführen.\\
+Da ein Königszug nichts bringt, muss ich einen Bauern ziehen. h4 gxh4 ist auch nicht förderlich. Wahrscheinlich verliert schwarz das dann.\\
+Eig ist es egal, mit welchem Bauern er nimmt. h4! Erzwingt einen Freibauern, denn weiß hat selber keinen h-Bauern mehr. Sollte er nun einen Königszug machen, spiele ich h3 und gewinne. Sonst verhalte ich mich genau wie bei den 3 Bauern.
+
+\vspace{1em}
+\underline{Zugfolge:}
+\begin{center}
+	\begin{tabular}[h]{c|c}
+		\textbf{Weiß}  & \textbf{Schwarz} \\
+		\hline
+		$\dots$ & f4 \\
+		gxf4 & h4 \\
+		K$\dots$  & h3 \\
+		gxh3 & gxh3 \\
+		$\dots$ & \unterstreichen{0-1}
+	\end{tabular}
+\end{center}
+\clearpage
+
+\Aufgabe{11}
+\black{8/2k5/6p1/3P1q2/6Bp/7P/5PN1/4K3 b - - 0 1}
+\links
+\underline{Lösung:}\\
+Ich weiß, dass ich eigentlich schauen muss, wie ich den h3 wegbekomme, kenne ich nun ziemlich viele Varianten nach Db1+. \\
+Die einzige wirkliche Idee, den h3 loszuwerden, ist mit der Dame direkt Dxg4 zu spielen, gefolgt von hg4. Nun habe ich eine freie h-Linie. \\ 
+Der König stört mich nicht, da aktuell der Springer im Weg steht. Zieht dieser erst weg ist Weiß eh zu spät und wie Du mal gesagt hast, können Springer Randbauern nur schwer abhalten.
+
+
+\vspace{1em}
+\underline{Zugfolge:}
+\begin{center}
+	\begin{tabular}[h]{c|c}
+		\textbf{Weiß}  & \textbf{Schwarz} \\
+		\hline
+		$\dots$ & Dxg4 \\
+		hxg4 & h3\\
+		S$\dots$ & h2 \\
+		$\dots$ & h1D\\
+		$\dots$ & \unterstreichen{0-1}
+	\end{tabular}
+\end{center}
+\textit{Auch wenn es eig ziemlich eindeutig war, habe ich zuerst an Db1+ überlegt. Ich weiß nicht wie ich es schaffe mich gezielt von Anfang an auf logische Varianten zu konzentrieren und weniger auf gefühlte.}
+\clearpage
+
+\Aufgabe{12}
+\black{5rk1/p5pp/8/8/2Pbp3/1P4P1/7P/4RN1K b - - 0 1}
+\links
+\underline{Lösung:}\\
+Auch die letzte Aufgabe funktioniert nach dem bekannten Mittel. Ich schaue, ob irgendwas im Weg steht und beseitige es. Txf1+ bringt nichts, da sich dann der Turm einfach auf e2 stellt. Deswegen spiele ich das einfach andersherum. \\
+Wenn ich mit Lc3 anfange und dann den Springer schlage, kann der Turm nicht auf e2, da das Feld f2 von dem Bauern bedroht wird.\\
+Ich bezweifel aber stark, das es eine Möglichkeit gibt, den Bauern durchzubringen. Ich denke mal, dass es eher darum geht, dass man zum Schluss den Läufer mehr hat, um die Partie für sich zu entscheiden.
+\vspace{1em}
+\underline{Zugfolge:}
+\begin{center}
+	\begin{tabular}[h]{c|c}
+		\textbf{Weiß}  & \textbf{Schwarz} \\
+		\hline
+		$\dots$ & Lc3 \\
+		Tc1 & Txf1+\\
+		Txf1 & e3  \\
+		\unterstreichen{1-0}
+	\end{tabular}
+\end{center}
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

@@ -1,0 +1,427 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{fancyheadings}
+\usepackage[ngerman,german]{babel}
+\usepackage{german}
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+\usepackage[active]{srcltx}
+\usepackage{algorithm}
+\usepackage[noend]{algorithmic}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bbm}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{ifthen}
+\usepackage{listings}
+\usepackage{struktex}
+\usepackage{hyperref}
+
+% Smile 
+\usepackage{wasysym}
+
+% FEN - Libary
+\usepackage{skak}
+
+% Führende Null mitziehen
+\newcommand{\leadingzero}[1]{\ifnum #1<10 0\the#1\else\the#1\fi}
+\renewcommand{\today}{\leadingzero{\day}.\leadingzero{\month}.\the\year}     % DD.MM.YYYY
+ 
+ % Anfuehrungszeichen
+\newcommand{\An}[1]{\glqq #1\grqq{}} 
+
+% Schach und so 
+% FEN
+\newcommand{\white}[1]{
+	\centering
+	\newgame
+	\fenboard{#1} 
+	\showboard \hspace{1cm} $\square$ \\
+	%	FEN: #1 
+}
+
+\newcommand{\black}[1]{
+	\centering
+	\newgame
+	\fenboard{#1} 
+	\showboard \hspace{1cm}  $\blacksquare$\\
+	%	FEN: #1 
+}
+
+% Faulheit
+\newcommand{\Remis}{$\frac{1}{2}-\frac{1}{2}$}
+\newcommand{\unterstreichen}[1]{\underline{\underline{#1}}}
+\newcommand{\links}{\raggedright}
+\newcommand{\eig}{eigentlich}
+\newcommand{\vll}{vielleicht}
+ 	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% EDIT THIS PART %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Fach}{Schachtraining}
+\newcommand{\Modulnummer}{Allgemein}
+\newcommand{\Name}{Jonathan Skopp}
+\newcommand{\Datum}{\today}
+\newcommand{\Matrikelnummer}{Zeyecx}
+\newcommand{\Semester}{WS 20/21}
+\newcommand{\Uebungsblatt}{2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\setlength{\parindent}{0em}
+\topmargin -1.0cm
+\oddsidemargin 0cm
+\evensidemargin 0cm
+\setlength{\textheight}{9.2in}
+\setlength{\textwidth}{6.0in}
+
+
+\newcommand{\Aufgabe}[1]{
+  {
+  \vspace*{0.5cm}
+  \textsf{\textbf{Aufgabe #1}}
+  \vspace*{0.2cm}
+  
+  }
+}
+%%%%%%%%%%%%%%
+\hypersetup{
+    pdftitle={\Fach{}: Hausaufgabe \Uebungsblatt{}},
+    pdfauthor={\Name},
+    pdfborder={0 0 0}
+}
+
+
+\title{Kurseinheit  \Uebungsblatt{}}
+\author{\Name{}}
+
+\begin{document}
+\thispagestyle{fancy}
+\lhead{\sf \large \Fach{} - \Modulnummer \\ \small \Name{} - \Matrikelnummer{}}
+\rhead{\sf \Semester{} \\  Datum \today }
+\vspace*{0.2cm}
+\begin{center}
+\LARGE \sf \textbf{Hausaufgabe \Uebungsblatt{}}
+\end{center}
+\vspace*{0.2cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Insert your solutions here %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Diese Hausaufgaben beziehen sich auf die Lichess Studie: \\ \url{https://lichess.org/study/6n8qLa5i}
+
+\Aufgabe{1}
+	\black{4B1k1/5p1p/5pp1/p3n3/3QP3/7P/5PPK/1q6 b - - 0 1}
+	\links
+	\underline{Forcierte Züge:}\\
+		Eine große Auswahl an forcierten Zügen gibt es eigentlich hier gar nicht. Der König und die Dame decken alle Figuren ab, außer den Läufer auf e8.  Vorschlag: Db8 oder Kf8\\ 
+	\vspace{0.5em}
+	\underline{Lösung:}\\
+	Kf8 ist recht schnell auszuschließen, da ich nach Dd6+ wieder zurückmuss und ich nicht wirklich was erreicht habe. Deswegen schaue ich mir den Zug Db8 etwas genauer an und stelle nebenbei eine schöne Gegenüberstellung auf den weißen König fest.  Der Läufer hat nun 2 Möglichkeiten. Entweder schlägt er mit Lxb7+ oder er zieht weg. Nach Lxb7 Kxb7 steht schwarz auf Gewinn. \\
+	Wenn La4 (oder ein anderes, nicht bedrohtes Feld) geht, können wir die Gegenüberstellung ausnutzen. Sf3 greift die Dame an und droht ein Matt, welches nicht aufzuhalten ist. \\
+	\vspace{0.5em}
+	\underline{Zugfolge:}\\
+			\begin{center}
+				\begin{tabular}[h]{c|c}
+					\textbf{Weiß}  & \textbf{Schwarz} \\
+					\hline
+					$\dots$ & Db8 \\
+					La4 & Sf3+ \\
+					Kh1 & Dh2\#\\
+					$\dots$ & \unterstreichen{0-1}
+				\end{tabular}
+			\end{center}
+	\underline{Kommentar:}\\
+	Ich weiß nicht, ob ich meine eigenen Partien mal eingereicht habe, sollte ich dies Mal gemacht haben, schau dir mal bitte die Partie \texttt{Peglau, Sarah - Skopp, Jonathan} an. Dort gab es dasselbe Motiv. Deswegen viel mir die Aufgabe recht leicht.
+	\clearpage
+
+\Aufgabe{2}
+	\black{8/B3kppp/4p3/3nP3/4RPK1/P1r5/7P/8 b - - 0 1}
+	\links
+	\vspace{1em}
+	\underline{Forcierte Züge:}\\
+	Hier gibt es nicht wirklich viele forcierte Züge. Ich habe zuerst Sf6+ gesehen. Der wir aber geschlagen. Deswegen kann man mit dem forcierten Zug f5+ Schach den Bauern ablenken.\\
+	\vspace{1em}
+	\underline{Lösung:}\\
+Lustiger weise war mein aller erster Gedanke, Txa3. Das stellt bloß nach Lc5+ die Partie ein \smiley\\
+demnach musste ich mir was anderes suchen. Da kommen wir zu der Idee von oben. Sg6+. Ich muss also schauen, dass der Bauer auf e5 das Feld f6 nicht mehr kontrolliert. Das kann ich durch f5 erreichen. Mit den fokussierten Zügen zu arbeiten, macht die Sache wirklich leichter.\\
+	\vspace{1em}
+	\underline{Zugfolge:}\\
+	\begin{center}
+		\begin{tabular}[h]{c|c}
+			\textbf{Weiß}  & \textbf{Schwarz} \\
+			\hline
+			$\dots$ & f5+ \\
+			exf6 & Sxf6+\\
+			Kh4 & Sxe4\\
+			$\dots$ & \unterstreichen{0-1}
+		\end{tabular}
+	\end{center}
+	\clearpage
+
+
+\Aufgabe{3}
+			\black{6k1/p4p2/1p1bq1p1/2p5/4n3/2BQ2PP/PP1N1PK1/8 b - - 0 1}
+	\links
+	\vspace{1em}
+	\underline{Forcierte Züge:}\\
+Hier ist das Ganze ein bisschen anders. Ich muss realisieren, dass mein Springer etwas angegriffen ist, folglich versuche gehe ich erst im Kopf alle Springer Züge durch. Keiner davon ist forciert oder macht Sinn. Na ja. Ich könnte auf d2 tauschen und Remis machen. Deswegen muss ich schauen, ob ich ein Schach habe, Dxh3. Deswegen stütze ich alles folgende auf diesen Zug. \\
+	\vspace{1em}
+	\underline{Lösung:}\\
+	Der Trick ist das nach Dxh3+ Kxh3 die Gabel auf f2 droht. Das bekomme selbst ich recht schnell raus. Die Frage ist vielmehr, dass nach Kg1 passiert. Also wenn er nicht nimmt.\\
+	Kg1 ist dann aber doch schlechter als gleich zu schlagen, denn nach Dh1+ muss er nehmen (er hat kein anderes Feld). Nun greift wieder die Gabel. Der Unterschied ist, dass der weiße König nun aber komplett falsch steht.\\
+	\vspace{1em}
+	\underline{Zugfolge:}\\
+	\begin{center}
+		\begin{tabular}[h]{c|c}
+			\textbf{Weiß}  & \textbf{Schwarz} \\
+			\hline
+			$\dots$ & Dxh3 +\\
+			Kg1 & Dh1+ \\
+			Kxg1 & Kxf2 \\
+			$\dots$ &  \unterstreichen{0-1}
+		\end{tabular}
+	\end{center}
+\vspace{1em}
+	\underline{Kommentar:} \\
+Ehrlich gesagt, weiß ich nicht mal, ob weiß wirklich Kg1 spielt. Es verschlimmert das Ganze nur noch. Allerdings kann man dennoch hoffen, dass weiß sich mit dem Bauern zufriedengibt.
+	\clearpage
+
+
+\Aufgabe{4}
+		\white{1n1q2k1/5p1p/1p4p1/1B1PN3/2QP1r2/r7/P4PP1/5RK1 w - - 0 1}
+	\links
+	\vspace{1em}
+	\underline{Kommentar:}\\
+Bei Fritz und Fertig gab es die Bärentaler Bauernolympiade. Da ging es darum, kleinen Kindern zu zeigen, wie der Läuferspieß funktioniert. Das hat zwar kaum was mit Schach zu tun, ist aber eigentlich ganz lustig \footnote{YouTube Video: \url{https://youtu.be/32l0XEzKyKs?t=583}}.  \\
+	\vspace{1em}
+	\underline{Forcierte Züge:}\\
+Gut, Dc1 springt hier komplett in das Auge. Schwarz kann nichts machen, um beide Türme zu retten. Einer von beiden wird immer fallen.\\
+Lustiger weise gibt es auch keine Möglichkeit für Schwarz irgendwas anderes zu gewinnen. \\
+	\vspace{1em}
+	\underline{Lösung:}\\
+Also, Dc1 gewinnt einen Turm. Schwarz muss sich nun entscheiden, welcher geschlagen werden soll. Interessant ist eigentlich nur Dd6. Dxf4 f6. Nun ist der Springer gefesselt. Aber das macht nichts. Da nach Tc1 die Drohung Tc8+ zu stark ist.  \\
+	\underline{Zugfolge:}\\
+	\begin{center}
+		\begin{tabular}[h]{c|c}
+			\textbf{Weiß}  & \textbf{Schwarz} \\
+			\hline
+			Dc1 &  Dd6 \\
+			Dxf4 & f6 \\
+			Tc1 & $\dots$\\
+			\unterstreichen{1-0}
+		\end{tabular}
+	\end{center}
+	\clearpage
+
+\Aufgabe{5}
+		\black{r1b1r1k1/pp2qppp/2n2n2/4p1B1/2Pp4/P3PN2/1PQ1BPPP/3RK2R b K - 0 1}
+	\links
+	\vspace{1em}
+	\underline{Forcierte Züge:}\\
+Forcierte Züge sind hier eigentlich nur e4 und d3. \\
+	\vspace{1em}
+	\underline{Lösung:}\\
+Wenn man sich das Ganze so anschaut, fällt einem schon die Bauerngabel auf d3 auf. Besonders als London und Englisch Spieler \smiley\\
+wenn man sich nun die Züge ansieht, fällt auf, das nach e4 einfach der andere Bauer hängt. Deswegen muss man erst d3 spielen. Dadurch \An{rutscht} die gesamte Gabel eine Reihe nach vorne und kann dort wiederholt werden. Ähnlich wie ein rekursiver Algorithmus. \\
+	\vspace{1em}
+	\underline{Zugfolge:}\\
+	\begin{center}
+		\begin{tabular}[h]{c|c}
+			\textbf{Weiß}  & \textbf{Schwarz} \\
+			\hline
+			$\dots$ & d3 \\
+			Lxd3 & e4 \\
+			$\dots$ &  \unterstreichen{0-1}
+		\end{tabular}
+	\end{center}
+	\clearpage
+
+\Aufgabe{6}
+		\white{5rk1/6pp/8/p1qp1N2/1p4n1/1P4P1/P3P2P/3Q1R1K w - - 0 1}
+	\links
+	\vspace{1em}
+	\underline{Forcierte Züge:}\\
+	Dd4 weil es Matt droht\\
+	\vspace{1em}
+	\underline{Lösung:}\\
+	siehe unten\\
+	\vspace{1em}
+	\underline{Zugfolge:}\\
+		\begin{center}
+		\begin{tabular}[h]{c|c}
+			\textbf{Weiß}  & \textbf{Schwarz} \\
+			\hline
+			Dd4 ($\triangle$ Dg7\#) & Dxd4 \\
+			Se7+ & Kh8 \\
+			Txf8\# & $\dots$ \\
+			\unterstreichen{1-0}
+		\end{tabular}
+	\end{center}
+	\vspace{1em}
+	\underline{Kommentar:}\\
+	Bei dieser Aufgabe habe ich mich sehr schwer getan. Ich glaube ich habe circa 15min gebraucht um zu verstehen was gesucht war. Ja, Dd4 ist forciert (vorallem mit der Drohung Dxg7\#) aber dennoch habe ich dafür lange gebraucht.
+	\clearpage
+	
+	\Aufgabe{7}
+		\white{8/1P3k2/1r5p/N3pp1p/P6P/3K4/5PP1/8 w - - 0 1}
+	\links
+	\vspace{1em}
+	\underline{Forcierte Züge:}\\
+	Es gibt keine forcierten Züge. Selbst der Lösungszug ist nicht forciert, da er die Situation nicht verschlimmert.\\
+	\vspace{1em}
+	\underline{Lösung:}\\
+Die Idee ist dieselbe wie die im Training gezeigte Stellung mit dem Läufer und dem Springer. \\
+Ich habe nach Sc6 immer eine Gabel auf d8 und decke dennoch das Umwandlungsfeld d8. Wenn nun Txb7 spiele, kommt Sd8+ und wenn der König anläuft, spiele ich selber b8D.\\
+	\vspace{1em}
+	\underline{Zugfolge:}\\
+	\begin{center}
+		\begin{tabular}[h]{c|c}
+			\textbf{Weiß}  & \textbf{Schwarz} \\
+			\hline
+			Sc6 & Txb7 \\
+			Sd8+ & Ke7 \\
+			Sxb7 & $\dots$\\
+			\unterstreichen{1-0}
+		\end{tabular}
+	\end{center}
+	\clearpage
+
+\Aufgabe{8}
+		\white{3R4/pp3pkp/2p1rpq1/5b2/8/2Q3N1/PPP3PP/6K1 w - - 0 1}
+	\links
+	\vspace{1em}
+	\underline{Forcierte Züge:}\\
+	Hier sind 2 Züge forciert. Tg8+ und Dc5 \\
+	\vspace{1em}
+	\underline{Lösung:}\\
+	Tg8+ kann \eig ausgeschlossen werden. Nach Kh6 ist es zwar schnell Matt aber nach Kxg8 habe ich ein Problem.\\
+	Das bedeutet, dass Dc5 der Schlüssel zu der Aufgabe sein muss. Dc5 droht Df8\# sowie ein Materialvorteil auf f5. \\
+	Eine richtige Zugfolge gibt es hier nicht. Denn das kann man aufgeben. Egal was ich mache, ich gehe komplett baden.\\
+	\vspace{1em}
+	\underline{Zugfolge:}\\
+	\begin{center}
+		\begin{tabular}[h]{c|c}
+			\textbf{Weiß}  & \textbf{Schwarz} \\
+			\hline
+		Dc5 & Te8 \\
+		Txe8 & $\cdots$\\
+			\unterstreichen{1-0}
+		\end{tabular}
+	\end{center}
+
+	\vspace{1em}
+	\underline{Kommentar:}
+	Es ist egal was man macht. Schwarz kann da nichts mehr retten. 
+	\clearpage
+
+\Aufgabe{9}
+		\white{6k1/1b4pp/1B3p2/4p3/1Pr5/5P2/5QPP/r4BK1 w - - 0 1}
+	\links
+	\vspace{1em}
+	\underline{Forcierte Züge:}\\
+	-\\
+	\underline{Lösung:}\\
+	Nett wäre es natürlich, wenn wir einfach Bxc4+ spielen könnten. Der Turm auf a1 gibt aber Schach. Das bedeutet, man lenkt diesen ab. Am besten kann man das machen, wenn man ihn auch auf die Diagonale packt, damit man den Spieß hat.\\
+	Auch wenn es mein erster Gedanke war, aber Db2 scheitert leider an Tcc1.\\
+	\vspace{1em}
+	\underline{Zugfolge:}\\
+	\begin{center}
+		\begin{tabular}[h]{c|c}
+			\textbf{Weiß}  & \textbf{Schwarz} \\
+			\hline
+		Da2 & Txa2\\
+		Lxc4+ & Kf8\\
+		Lxa2 & $\cdots$\\
+		\unterstreichen{1-0}
+		\end{tabular}
+	\end{center}
+	\clearpage
+
+\Aufgabe{10}	
+		\white{1n6/2qb1kp1/1p2pp1p/1P1p4/1Q1P1N2/4P1PB/5P1P/6K1 w - - 0 1}
+	\links
+	\vspace{1em}
+	\underline{Kommentar:}
+	Diese Aufgabe habe nicht ich gelöst, sondern mehr die Verzweiflung in mir.\\
+	\vspace{1em}
+	\underline{Forcierte Züge:}\\
+	?\\
+	\vspace{1em}
+	\underline{Lösung:}\\
+Irgendwann habe ich Lxe6 gespielt und gehofft auf die Dinge, die da kommen. Daher weiß ich nicht, ob die Zugfolge überhaupt Sinn macht.\\
+	\vspace{1em}
+	\underline{Zugfolge:}\\
+	\begin{center}
+		\begin{tabular}[h]{c|c}
+			\textbf{Weiß}  & \textbf{Schwarz} \\
+			\hline
+			Lxe6+ & Lxe6\\
+			Df8+ & Kf8\\
+			Sxe6+  & Kg8 \\
+			Sxc7 & $\dots$\\
+			\unterstreichen{1-0}
+		\end{tabular}
+	\end{center}
+\vspace{1em}
+\underline{Anmerkung:}\\
+Das geht aber auch nur, wenn schwarz wieder nimmt. Nach Bxe6 Ke8 ist da nichts los\\
+	\clearpage
+
+\Aufgabe{11}
+		\white{r1bq1rk1/p1p1bppp/1p2pn2/6B1/3P4/3B1N2/PPP1QPPP/R3K2R w KQ - 0 1}
+	\links
+	\vspace{1em}
+	\underline{Forcierte Züge:}\\
+	-\\
+	\vspace{1em}
+	\underline{Lösung:}\\
+	Auffällig ist hier die Gabel der Dame auf e4. Sie schaut auf den Bauern h7 und den Turm. Ich habe das allerdings nie mit dem Läufer Einschlag auf h7 verstanden. Das Ziel ist es, den König so auf h7 zu bewegen, dass ich den Turm auf a8 schlagen kann. \\
+	\vspace{1em}
+	\underline{Zugfolge:}\\
+	\begin{center}
+		\begin{tabular}[h]{c|c}
+			\textbf{Weiß}  & \textbf{Schwarz} \\
+			\hline
+			Lxf6 & Lxf6 \\
+			Lxh7 & Kxh7 \\
+			De4+ & Kg8\\
+			Dxa8 & $\dots$ \\
+			\unterstreichen{1-0}
+		\end{tabular}
+	\end{center}
+	\clearpage
+
+\Aufgabe{12}
+	\white{6k1/5r1p/p2N4/nppP2q1/2P5/1P2N3/PQ5P/7K w - - 0 1}
+	\links
+	\vspace{1em}
+	\underline{Forcierte Züge:}\\
+	Dh8+\\
+	\vspace{1em}
+	\underline{Lösung:}\\
+	Das ist die Standard Aufgabe.\\
+	\vspace{1em}
+	\underline{Zugfolge:}\\
+	\begin{center}
+		\begin{tabular}[h]{c|c}
+			\textbf{Weiß}  & \textbf{Schwarz} \\
+			\hline
+		Dh8+ & Kxh8\\
+		Sxf7+ & Kg8 \\
+		Sxg5 & $\cdots$\\
+		\unterstreichen{1-0}
+		\end{tabular}
+	\end{center}
+	\clearpage
+	
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

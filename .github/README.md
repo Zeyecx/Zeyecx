@@ -7,7 +7,7 @@
 
 ### Connect with me:
 
-[<img align="left" alt="website lechner.io" width="22px" src="https://simpleicons.org/icons/about-dot-me.svg" />][website]
+[<img align="left" alt="website zeyecx.com" width="22px" src="https://simpleicons.org/icons/about-dot-me.svg" />][website]
 [<img align="left" alt="twitter @Zeyecx" width="22px" src="https://simpleicons.org/icons/twitter.svg" />][twitter]
 [<img align="left" alt="instagram @Zeyecx" width="22px" src="https://simpleicons.org/icons/instagram.svg" />][instagram]
 [<img align="left" alt="youtube @Zeyecx" width="22px" src="https://simpleicons.org/icons/youtube.svg" />][youtube]
